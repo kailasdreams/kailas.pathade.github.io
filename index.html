@@ -4,15 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kailas H. Pathade - Network Consultant specializing in F5 BIG-IP, Citrix NetScaler, ADC, network security, and automation.">
     <meta name="theme-color" content="#0b1020">
+
+    <meta name="description"
+          content="Kailas H. Pathade - Network Consultant specializing in F5 BIG-IP LTM/GTM, ADC, Citrix NetScaler, network security, Python and Ansible automation.">
+
+    <meta name="keywords"
+          content="Kailas Pathade, F5 BIG-IP, F5 LTM, F5 GTM, Citrix NetScaler, Radware Alteon, Network Consultant, Ansible, Python, ADC Migration">
+
+    <meta name="author" content="Kailas H. Pathade">
+
     <title>Kailas H. Pathade | Network Consultant & F5 Specialist</title>
 
     <style>
         :root {
             --bg: #0b1020;
             --surface: #121a2d;
-            --surface-light: #19243b;
+            --surface2: #19243b;
             --text: #f1f5f9;
             --muted: #a6b3c8;
             --primary: #60a5fa;
@@ -39,6 +47,12 @@
             text-decoration: none;
         }
 
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
         .container {
             width: min(1120px, 90%);
             margin: auto;
@@ -47,8 +61,8 @@
         header {
             position: sticky;
             top: 0;
-            z-index: 10;
-            background: rgba(11, 16, 32, 0.94);
+            z-index: 100;
+            background: rgba(11, 16, 32, 0.96);
             border-bottom: 1px solid var(--border);
             backdrop-filter: blur(12px);
         }
@@ -56,15 +70,15 @@
         nav {
             min-height: 72px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 20px;
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
         }
 
         .logo span {
@@ -74,7 +88,7 @@
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 22px;
+            gap: 21px;
             list-style: none;
             font-size: 0.9rem;
             color: var(--muted);
@@ -85,29 +99,29 @@
         }
 
         .hero {
-            padding: 100px 0 85px;
+            padding: 95px 0 85px;
             background:
-                radial-gradient(ellipse at 85% 10%, #18355b 0%, transparent 40%),
-                radial-gradient(ellipse at 10% 90%, #123b3b 0%, transparent 32%);
+                radial-gradient(ellipse at 85% 10%, #18355b 0%, transparent 42%),
+                radial-gradient(ellipse at 10% 90%, #123b3b 0%, transparent 35%);
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.5fr 0.8fr;
-            align-items: center;
             gap: 55px;
+            align-items: center;
         }
 
         .eyebrow {
             color: var(--accent);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4.6rem);
+            font-size: clamp(2.7rem, 6vw, 4.6rem);
             line-height: 1.12;
             letter-spacing: -2px;
             margin: 18px 0;
@@ -119,24 +133,34 @@
 
         .hero-description {
             color: var(--muted);
-            max-width: 660px;
-            font-size: 1.08rem;
+            max-width: 670px;
+            font-size: 1.07rem;
             margin-bottom: 28px;
         }
 
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 12px;
+            align-items: center;
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 21px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 19px;
             border-radius: 9px;
-            font-weight: 700;
             border: 1px solid var(--border);
-            transition: 0.2s ease;
+            font-weight: 700;
+            font-size: 0.92rem;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
         }
 
         .btn-primary {
@@ -145,16 +169,11 @@
             border-color: var(--primary);
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
         .profile-card {
-            padding: 30px;
+            background: rgba(18, 26, 45, 0.92);
             border: 1px solid var(--border);
-            background: rgba(18, 26, 45, 0.9);
             border-radius: 20px;
+            padding: 30px;
             text-align: center;
             box-shadow: 0 20px 70px #00000025;
         }
@@ -167,10 +186,9 @@
             display: grid;
             place-items: center;
             background: linear-gradient(135deg, #2563eb, #14b8a6);
-            color: white;
+            border: 5px solid #263b59;
             font-size: 2.5rem;
             font-weight: 800;
-            border: 5px solid #263b59;
         }
 
         .profile-card h2 {
@@ -187,9 +205,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 20px;
             color: var(--accent);
             font-size: 0.85rem;
+            margin-top: 20px;
         }
 
         .dot {
@@ -200,39 +218,45 @@
         }
 
         section {
-            padding: 80px 0;
-            scroll-margin-top: 72px;
+            padding: 78px 0;
+            scroll-margin-top: 75px;
         }
 
         .section-heading {
-            margin-bottom: 35px;
+            margin-bottom: 32px;
         }
 
         .section-heading h2 {
             font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 8px;
+            margin: 7px 0;
         }
 
-        .section-heading p {
+        .section-heading > p:last-child {
             color: var(--muted);
-            max-width: 720px;
+            max-width: 750px;
+        }
+
+        .panel,
+        .skill-card,
+        .project-card,
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .panel p,
+        .skill-card p,
+        .project-card p,
+        .service-card p {
+            color: var(--muted);
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
-            gap: 28px;
-        }
-
-        .panel {
-            padding: 27px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-        }
-
-        .panel p {
-            color: var(--muted);
+            gap: 24px;
         }
 
         .stats {
@@ -243,7 +267,8 @@
 
         .stat {
             padding: 18px;
-            background: var(--surface-light);
+            background: var(--surface2);
+            border: 1px solid var(--border);
             border-radius: 12px;
         }
 
@@ -255,27 +280,26 @@
 
         .stat span {
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 0.83rem;
         }
 
         .skills-grid,
-        .projects-grid {
+        .projects-grid,
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
 
         .skill-card,
-        .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 24px;
-            border-radius: 15px;
+        .project-card,
+        .service-card {
             transition: transform 0.2s, border-color 0.2s;
         }
 
         .skill-card:hover,
-        .project-card:hover {
+        .project-card:hover,
+        .service-card:hover {
             transform: translateY(-4px);
             border-color: var(--primary);
         }
@@ -286,30 +310,33 @@
         }
 
         .skill-card h3,
-        .project-card h3 {
-            margin-bottom: 10px;
+        .project-card h3,
+        .service-card h3 {
             font-size: 1.1rem;
-        }
-
-        .skill-card p,
-        .project-card p {
-            color: var(--muted);
-            font-size: 0.93rem;
+            margin-bottom: 10px;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 18px;
+            margin-top: 17px;
         }
 
         .tag {
-            padding: 5px 10px;
+            padding: 4px 9px;
             border-radius: 6px;
             background: #20314b;
-            color: #bcd9ff;
-            font-size: 0.78rem;
+            color: #c5ddff;
+            font-size: 0.77rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 17px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 700;
         }
 
         .experience-list {
@@ -321,6 +348,10 @@
         .experience-item {
             position: relative;
             margin-bottom: 30px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
         }
 
         .experience-item::before {
@@ -340,37 +371,89 @@
 
         .experience-item .role {
             color: var(--primary);
-            margin: 4px 0 8px;
+            margin: 3px 0 8px;
         }
 
         .experience-item p {
             color: var(--muted);
         }
 
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow-wrap: anywhere;
+            transition: border-color 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--surface2);
+            font-size: 1.4rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-card .contact-value {
+            color: var(--primary);
+        }
+
         .cta {
             text-align: center;
+            padding: 45px 25px;
             background:
                 radial-gradient(ellipse at top, #17365c, transparent 70%),
                 var(--surface);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 50px 25px;
         }
 
         .cta h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 12px;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin: 8px 0 12px;
         }
 
-        .cta p {
+        .cta > p {
             color: var(--muted);
-            max-width: 650px;
-            margin: 0 auto 25px;
+            max-width: 680px;
+            margin: 0 auto 23px;
+        }
+
+        .center {
+            justify-content: center;
         }
 
         footer {
-            padding: 25px 0;
             border-top: 1px solid var(--border);
+            padding: 25px 0;
             color: var(--muted);
             font-size: 0.85rem;
         }
@@ -380,6 +463,10 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 12px;
+        }
+
+        footer a {
+            color: var(--primary);
         }
 
         @media (max-width: 850px) {
@@ -393,34 +480,37 @@
             }
 
             .skills-grid,
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .projects-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero {
-                padding-top: 70px;
+                padding-top: 65px;
             }
         }
 
         @media (max-width: 560px) {
             nav {
-                padding: 14px 0;
                 align-items: flex-start;
                 flex-direction: column;
+                padding: 13px 0;
             }
 
             .nav-links {
-                gap: 13px;
-                font-size: 0.82rem;
+                gap: 12px;
+                font-size: 0.81rem;
             }
 
             .skills-grid,
-            .projects-grid {
+            .projects-grid,
+            .services-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
             section {
-                padding: 55px 0;
+                padding: 54px 0;
             }
 
             .hero {
@@ -431,13 +521,19 @@
                 letter-spacing: -1px;
             }
 
-            .stats {
-                grid-template-columns: 1fr 1fr;
+            .buttons .btn {
+                max-width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+            *,
+            *::before,
+            *::after {
                 scroll-behavior: auto !important;
                 transition: none !important;
             }
@@ -446,392 +542,668 @@
 </head>
 
 <body>
-    <header>
-        <nav class="container" aria-label="Main navigation">
-            <a href="#home" class="logo">KAILAS<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="container hero-grid">
-                <div>
-                    <p class="eyebrow">Network Engineering · Application Delivery</p>
-                    <h1>Kailas H.<br><span>Pathade</span></h1>
-                    <p class="hero-description">
-                        Network Consultant and F5 BIG-IP Specialist with 18+ years
-                        of experience in application delivery, load balancing,
-                        network security, data-center infrastructure, and automation.
-                        I help organizations design, implement, migrate, and optimize
-                        reliable network services.
-                    </p>
-                    <div class="buttons">
-                        <a class="btn btn-primary" href="#projects">Explore My Projects</a>
-                        <a class="btn" href="#contact">Contact Me</a>
-                    </div>
-                </div>
+<header>
+    <nav class="container" aria-label="Main navigation">
+        <a href="#home" class="logo">KAILAS<span>.</span></a>
 
-                <aside class="profile-card">
-                    <div class="avatar" aria-label="Kailas Pathade initials">KP</div>
-                    <h2>Network Consultant</h2>
-                    <p>F5 BIG-IP · ADC · Network Security</p>
-                    <p>Implementation · Troubleshooting · Automation</p>
-                    <div class="availability">
-                        <span class="dot"></span>
-                        Open to professional opportunities
-                    </div>
-                    <div class="tags" style="justify-content:center">
-                        <span class="tag">Architecture</span>
-                        <span class="tag">Consulting</span>
-                        <span class="tag">Training</span>
-                    </div>
-                </aside>
-            </div>
-        </section>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <section id="about">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">About Me</p>
-                    <h2>Connecting infrastructure with business outcomes.</h2>
-                    <p>Practical engineering, complex troubleshooting, and reliable application delivery.</p>
-                </div>
+<main>
 
-                <div class="about-grid">
-                    <div class="panel">
-                        <p>
-                            I am an IT infrastructure and networking professional
-                            specializing in application delivery controllers (ADCs),
-                            load balancing, global server load balancing, network
-                            security, and data-center connectivity.
-                        </p>
-                        <br>
-                        <p>
-                            My technical focus includes F5 BIG-IP LTM/GTM, Citrix
-                            NetScaler ADC, Radware Alteon, configuration migrations,
-                            SSL offloading, high availability, and automation using
-                            Python and Ansible.
-                        </p>
-                        <br>
-                        <p>
-                            I enjoy translating operational requirements into
-                            practical implementation plans, repeatable automation,
-                            and well-documented technical solutions.
-                        </p>
-                    </div>
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
 
-                    <div class="stats">
-                        <div class="stat">
-                            <strong>18+</strong>
-                            <span>Years of IT experience</span>
-                        </div>
-                        <div class="stat">
-                            <strong>100+</strong>
-                            <span>ADC migrations supported</span>
-                        </div>
-                        <div class="stat">
-                            <strong>F5</strong>
-                            <span>LTM and GTM expertise</span>
-                        </div>
-                        <div class="stat">
-                            <strong>CI/CD</strong>
-                            <span>Infrastructure automation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <div>
+                <p class="eyebrow">
+                    Network Engineering | Application Delivery | Automation
+                </p>
 
-        <section id="skills">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Technical Expertise</p>
-                    <h2>Core Skills</h2>
-                    <p>Technologies and capabilities I use to design, implement, and support enterprise infrastructure.</p>
-                </div>
+                <h1>
+                    Kailas H.<br>
+                    <span>Pathade</span>
+                </h1>
 
-                <div class="skills-grid">
-                    <article class="skill-card">
-                        <div class="card-icon">⚖️</div>
-                        <h3>F5 BIG-IP</h3>
-                        <p>Application delivery, virtual servers, pools, monitors, persistence, SSL, HA, and troubleshooting.</p>
-                        <div class="tags">
-                            <span class="tag">LTM</span>
-                            <span class="tag">GTM/DNS</span>
-                            <span class="tag">iRules</span>
-                            <span class="tag">AS3</span>
-                        </div>
-                    </article>
+                <p class="hero-description">
+                    Network Consultant and F5 BIG-IP Specialist with 18+
+                    years of IT infrastructure experience. Focused on enterprise
+                    load balancing, application delivery, network security,
+                    ADC migrations, cloud connectivity, and infrastructure
+                    automation.
+                </p>
 
-                    <article class="skill-card">
-                        <div class="card-icon">🔄</div>
-                        <h3>ADC & Migration</h3>
-                        <p>Load-balancer configuration, application onboarding, platform migration, and service validation.</p>
-                        <div class="tags">
-                            <span class="tag">NetScaler</span>
-                            <span class="tag">Radware Alteon</span>
-                            <span class="tag">GSLB</span>
-                        </div>
-                    </article>
+                <div class="buttons">
+                    <a class="btn btn-primary" href="#projects">
+                        Explore Projects
+                    </a>
 
-                    <article class="skill-card">
-                        <div class="card-icon">🛡️</div>
-                        <h3>Network Security</h3>
-                        <p>Secure application delivery, SSL certificate management, access controls, and troubleshooting.</p>
-                        <div class="tags">
-                            <span class="tag">Palo Alto</span>
-                            <span class="tag">Fortinet</span>
-                            <span class="tag">WAF</span>
-                        </div>
-                    </article>
+                    <a class="btn" href="#contact">
+                        Contact for Support
+                    </a>
 
-                    <article class="skill-card">
-                        <div class="card-icon">⚙️</div>
-                        <h3>Automation & DevOps</h3>
-                        <p>Repeatable configuration, infrastructure deployment, validation, and operational tooling.</p>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Ansible</span>
-                            <span class="tag">AAP</span>
-                            <span class="tag">Git</span>
-                        </div>
-                    </article>
-
-                    <article class="skill-card">
-                        <div class="card-icon">🌐</div>
-                        <h3>Routing & Connectivity</h3>
-                        <p>Enterprise networking, data-center connectivity, VPNs, and cloud network integration.</p>
-                        <div class="tags">
-                            <span class="tag">TCP/IP</span>
-                            <span class="tag">BGP</span>
-                            <span class="tag">OSPF</span>
-                            <span class="tag">AWS</span>
-                        </div>
-                    </article>
-
-                    <article class="skill-card">
-                        <div class="card-icon">🎓</div>
-                        <h3>Consulting & Training</h3>
-                        <p>Technical mentoring, LTM training, implementation guidance, documentation, and L3 support.</p>
-                        <div class="tags">
-                            <span class="tag">Design</span>
-                            <span class="tag">LLD</span>
-                            <span class="tag">Troubleshooting</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Selected Work</p>
-                    <h2>Projects & Engineering Initiatives</h2>
-                    <p>Examples of the automation and infrastructure solutions I build and explore.</p>
-                </div>
-
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="card-icon">🚀</div>
-                        <h3>Git-to-F5 CI/CD Pipeline</h3>
-                        <p>
-                            An approval-based deployment workflow for BIG-IP LTM
-                            objects using Git, Ansible Automation Platform,
-                            configuration validation, and post-deployment checks.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Ansible</span>
-                            <span class="tag">AAP</span>
-                            <span class="tag">GitHub</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">📊</div>
-                        <h3>F5 Inventory & Monitoring</h3>
-                        <p>
-                            A dashboard concept for collecting BIG-IP device
-                            information, VIPs, pools, pool members, firmware,
-                            high availability status, and WAF policy information.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">JSON</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">🔁</div>
-                        <h3>ADC Migration Automation</h3>
-                        <p>
-                            A configuration conversion initiative to help migrate
-                            supported load-balancing objects from NetScaler and
-                            Radware platforms to F5 BIG-IP LTM.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Migration</span>
-                            <span class="tag">TMOS</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">🔐</div>
-                        <h3>Application Delivery Security</h3>
-                        <p>
-                            Automation and operational workflows for SSL profiles,
-                            certificate management, WAF policy visibility, and
-                            secure application delivery.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">F5</span>
-                            <span class="tag">SSL/TLS</span>
-                            <span class="tag">WAF</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">☁️</div>
-                        <h3>Cloud Connectivity</h3>
-                        <p>
-                            Network connectivity and troubleshooting concepts
-                            involving AWS networking, VPN connectivity, and
-                            enterprise data-center integration.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">AWS</span>
-                            <span class="tag">VPN</span>
-                            <span class="tag">Networking</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">📚</div>
-                        <h3>F5 LTM Training Lab</h3>
-                        <p>
-                            Hands-on learning covering virtual servers, pools,
-                            monitors, persistence, SSL profiles, high availability,
-                            and troubleshooting scenarios.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">F5 LTM</span>
-                            <span class="tag">Training</span>
-                            <span class="tag">Lab</span>
-                        </div>
-                    </article>
-                </div>
-
-                <div style="text-align:center; margin-top:32px">
-                    <a class="btn btn-primary"
+                    <a class="btn"
                        href="https://github.com/kailasdreams"
-                       target="_blank" rel="noopener noreferrer">
-                        Explore GitHub Repositories ↗
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub Profile ↗
                     </a>
                 </div>
             </div>
-        </section>
 
-        <section id="experience">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Career</p>
-                    <h2>Professional Experience</h2>
-                    <p>Infrastructure engineering, enterprise networking, and technical leadership.</p>
+            <aside class="profile-card">
+                <div class="avatar" aria-label="Kailas Pathade initials">
+                    KP
                 </div>
 
-                <div class="panel">
-                    <div class="experience-list">
-                        <article class="experience-item">
-                            <h3>Wipro Technologies</h3>
-                            <p class="role">Network Lead</p>
-                            <p>
-                                Enterprise network operations, application delivery,
-                                advanced troubleshooting, infrastructure changes,
-                                technical coordination, and high-severity incident support.
-                            </p>
-                        </article>
+                <h2>Network Consultant</h2>
+                <p>F5 BIG-IP | ADC | Network Security</p>
+                <p>Implementation | Troubleshooting | Automation</p>
 
-                        <article class="experience-item">
-                            <h3>Earlier Professional Experience</h3>
-                            <p class="role">Networking & IT Infrastructure</p>
-                            <p>
-                                Experience across IT infrastructure and networking
-                                roles with organizations including ITI, Reliance,
-                                Ericsson, Orient, and Tech Mahindra.
-                            </p>
-                        </article>
-
-                        <article class="experience-item">
-                            <h3>Certifications & Education</h3>
-                            <p class="role">Professional Development</p>
-                            <p>
-                                Citrix Certified Professional – Networking (CCP-N),
-                                AWS Certified Solutions Architect, Bachelor of
-                                Computer Applications, and Diploma in Electronics
-                                and Telecommunication.
-                            </p>
-                        </article>
-                    </div>
-                    <p style="font-size:0.85rem; margin-top:20px">
-                        Note: Add exact employment dates and certification details
-                        before using this page as a formal résumé.
-                    </p>
+                <div class="availability">
+                    <span class="dot"></span>
+                    Open to Opportunities
                 </div>
-            </div>
-        </section>
 
-        <section id="contact">
-            <div class="container">
-                <div class="cta">
-                    <p class="eyebrow">Let's Connect</p>
-                    <h2>Have a network or automation challenge?</h2>
-                    <p>
-                        I'm interested in networking and application delivery
-                        opportunities, F5 implementation projects, ADC migrations,
-                        automation initiatives, consulting, and technical training.
-                    </p>
-                    <div class="buttons" style="justify-content:center">
-                        <a class="btn btn-primary"
-                           href="https://github.com/kailasdreams"
-                           target="_blank" rel="noopener noreferrer">
-                            Visit My GitHub
-                        </a>
-                        <a class="btn"
-                           href="https://www.linkedin.com/"
-                           target="_blank" rel="noopener noreferrer">
-                            Connect on LinkedIn
-                        </a>
-                    </div>
-                    <p style="font-size:0.8rem; margin-top:18px">
-                        Replace the LinkedIn link with your direct profile URL.
-                    </p>
+                <div class="tags" style="justify-content:center">
+                    <span class="tag">F5 LTM/GTM</span>
+                    <span class="tag">NetScaler</span>
+                    <span class="tag">Ansible</span>
                 </div>
-            </div>
-        </section>
-    </main>
+            </aside>
 
-    <footer>
-        <div class="container footer-content">
-            <p>© <span id="year"></span> Kailas H. Pathade. All rights reserved.</p>
-            <a href="https://github.com/kailasdreams"
-               target="_blank" rel="noopener noreferrer">
-                Built for GitHub Pages ↗
-            </a>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-    </script>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">About Me</p>
+                <h2>Engineering reliable application delivery</h2>
+                <p>
+                    Enterprise networking, infrastructure consulting,
+                    technical leadership, and automation.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="panel">
+                    <p>
+                        I am an IT infrastructure and networking professional
+                        with 18+ years of experience in enterprise networking,
+                        application delivery controllers, load balancing,
+                        network security, and data-center operations.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        My primary technical expertise includes F5 BIG-IP
+                        LTM/GTM, Citrix NetScaler ADC, Radware Alteon,
+                        virtual servers, pools, health monitors, SSL
+                        offloading, persistence, high availability,
+                        and application troubleshooting.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        I also work on configuration migration, Python-based
+                        automation, Ansible deployment workflows, Git-based
+                        infrastructure delivery, and technical documentation.
+                        My goal is to make infrastructure more reliable,
+                        manageable, and repeatable.
+                    </p>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <strong>18+</strong>
+                        <span>Years of IT Experience</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>100+</strong>
+                        <span>ADC Migrations Supported</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>F5</strong>
+                        <span>LTM and GTM Expertise</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>CI/CD</strong>
+                        <span>Automation Initiatives</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Technical Expertise</p>
+                <h2>Core Skills & Technologies</h2>
+                <p>
+                    Technologies used across application delivery,
+                    network infrastructure, security, and automation.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>F5 BIG-IP</h3>
+                    <p>
+                        LTM and GTM/DNS, virtual servers, pools,
+                        nodes, monitors, persistence, SSL profiles,
+                        HA, iRules, and troubleshooting.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">LTM</span>
+                        <span class="tag">GTM/DNS</span>
+                        <span class="tag">iRules</span>
+                        <span class="tag">AS3</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <div class="card-icon">🔄</div>
+                    <h3>ADC & Migration</h3>
+                    <p>
+                        Application delivery design, load balancing,
+                        configuration conversion, platform migration,
+                        and deployment validation.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">NetScaler</span>
+                        <span class="tag">Radware Alteon</span>
+                        <span class="tag">GSLB</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Network Security</h3>
+                    <p>
+                        Secure application delivery, SSL/TLS,
+                        WAF operations, firewall troubleshooting,
+                        and access connectivity.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Palo Alto</span>
+                        <span class="tag">Fortinet</span>
+                        <span class="tag">WAF</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Automation & DevOps</h3>
+                    <p>
+                        Repeatable configuration, infrastructure
+                        provisioning, deployment validation,
+                        and operational dashboards.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">AAP</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Networking & Cloud</h3>
+                    <p>
+                        Routing, switching, data-center connectivity,
+                        VPNs, and enterprise cloud networking.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">TCP/IP</span>
+                        <span class="tag">BGP</span>
+                        <span class="tag">OSPF</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <div class="card-icon">📋</div>
+                    <h3>Technical Leadership</h3>
+                    <p>
+                        L3 support, incident resolution, change
+                        management, low-level designs, and
+                        technical mentoring.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Troubleshooting</span>
+                        <span class="tag">LLD</span>
+                        <span class="tag">Training</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Engineering Portfolio</p>
+                <h2>Projects & Automation Initiatives</h2>
+                <p>
+                    Selected projects and engineering initiatives.
+                    Follow the GitHub link to explore published source code.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Git-to-F5 CI/CD</h3>
+                    <p>
+                        An approval-based BIG-IP LTM deployment workflow
+                        using Git, Ansible Automation Platform, configuration
+                        validation, and post-deployment checks.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Ansible</span>
+                        <span class="tag">AAP</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                    <a class="project-link"
+                       href="https://github.com/kailasdreams"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Explore repositories ↗
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-icon">📊</div>
+                    <h3>F5 Inventory Dashboard</h3>
+                    <p>
+                        Dashboard concept for device inventory, firmware,
+                        high availability, VIPs, pools, pool members,
+                        and WAF policy visibility.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">JSON</span>
+                    </div>
+                    <a class="project-link"
+                       href="https://github.com/kailasdreams"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View GitHub profile ↗
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-icon">🔁</div>
+                    <h3>ADC Migration Automation</h3>
+                    <p>
+                        Migration tooling initiative for converting
+                        supported NetScaler and Radware load-balancing
+                        configurations to F5 BIG-IP LTM commands.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ADC</span>
+                        <span class="tag">TMOS</span>
+                    </div>
+                    <a class="project-link"
+                       href="https://github.com/kailasdreams"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View GitHub profile ↗
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-icon">🔐</div>
+                    <h3>SSL & WAF Operations</h3>
+                    <p>
+                        Operational workflows for SSL profiles,
+                        certificate management, policy visibility,
+                        and secure application delivery.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">F5</span>
+                        <span class="tag">SSL/TLS</span>
+                        <span class="tag">WAF</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-icon">☁️</div>
+                    <h3>Cloud Connectivity</h3>
+                    <p>
+                        Enterprise connectivity and troubleshooting
+                        concepts involving AWS networking, VPNs,
+                        and data-center integration.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">VPN</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-icon">📚</div>
+                    <h3>F5 LTM Training Lab</h3>
+                    <p>
+                        Hands-on learning covering virtual servers,
+                        pools, monitors, persistence, SSL profiles,
+                        HA, and troubleshooting.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">F5 LTM</span>
+                        <span class="tag">Lab</span>
+                        <span class="tag">Training</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="buttons center" style="margin-top:30px">
+                <a class="btn btn-primary"
+                   href="https://github.com/kailasdreams"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View All GitHub Repositories ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Professional Services</p>
+                <h2>How I Can Help</h2>
+                <p>
+                    Consulting, implementation, technical support,
+                    and knowledge sharing for enterprise infrastructure.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service-card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>F5 Implementation</h3>
+                    <p>
+                        BIG-IP LTM configuration, VIP and pool deployment,
+                        health monitors, SSL profiles, persistence,
+                        and high availability.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">🔧</div>
+                    <h3>Troubleshooting & Support</h3>
+                    <p>
+                        Application connectivity, load-balancing issues,
+                        packet analysis, configuration review,
+                        and production incident troubleshooting.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">🔀</div>
+                    <h3>ADC Migration</h3>
+                    <p>
+                        Migration assessment, configuration conversion,
+                        implementation planning, validation,
+                        and transition documentation.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">🤖</div>
+                    <h3>Infrastructure Automation</h3>
+                    <p>
+                        Python and Ansible automation, Git workflows,
+                        deployment pipelines, and configuration
+                        inventory reporting.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>F5 LTM Training</h3>
+                    <p>
+                        Practical training on BIG-IP fundamentals,
+                        application delivery, SSL, persistence,
+                        troubleshooting, and lab exercises.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">📝</div>
+                    <h3>Design & Documentation</h3>
+                    <p>
+                        Technical implementation plans, low-level
+                        designs, change requests, operational
+                        procedures, and knowledge transfer.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Career & Credentials</p>
+                <h2>Professional Experience</h2>
+                <p>
+                    Enterprise infrastructure, networking,
+                    application delivery, and technical leadership.
+                </p>
+            </div>
+
+            <div class="panel">
+                <div class="experience-list">
+
+                    <article class="experience-item">
+                        <h3>Wipro Technologies</h3>
+                        <p class="role">Network Lead</p>
+                        <p>
+                            Network infrastructure operations,
+                            application delivery, advanced troubleshooting,
+                            change management, technical coordination,
+                            and high-severity incident support.
+                        </p>
+                    </article>
+
+                    <article class="experience-item">
+                        <h3>Earlier Professional Experience</h3>
+                        <p class="role">IT Infrastructure & Networking</p>
+                        <p>
+                            Professional experience across IT and
+                            networking roles with organizations including
+                            ITI, Reliance, Ericsson, Orient, and Tech Mahindra.
+                        </p>
+                    </article>
+
+                    <article class="experience-item">
+                        <h3>Certifications</h3>
+                        <p class="role">Networking & Cloud</p>
+                        <p>
+                            Citrix Certified Professional – Networking
+                            (CCP-N) and AWS Certified Solutions Architect.
+                        </p>
+                    </article>
+
+                    <article class="experience-item">
+                        <h3>Education</h3>
+                        <p class="role">Academic Qualifications</p>
+                        <p>
+                            Bachelor of Computer Applications (BCA),
+                            Annamalai University, and Diploma in
+                            Electronics & Telecommunication.
+                        </p>
+                    </article>
+
+                </div>
+
+                <p style="font-size:0.82rem; margin-top:25px">
+                    Add exact employment dates, certification details,
+                    and verified project links before using this page
+                    as a formal résumé.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="eyebrow">Contact & Support</p>
+                <h2>Let's Connect</h2>
+                <p>
+                    For F5 BIG-IP support, networking consulting,
+                    implementation projects, ADC migration,
+                    automation, and training enquiries, contact me below.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <a class="contact-card"
+                   href="mailto:kailasdreams@gmail.com">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>Support Email</h3>
+                        <p class="contact-value">
+                            kailasdreams@gmail.com
+                        </p>
+                        <p>Click to send an email</p>
+                    </div>
+                </a>
+
+                <a class="contact-card"
+                   href="tel:+917777050805">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Mobile / Phone Support</h3>
+                        <p class="contact-value">
+                            +91 7777050805
+                        </p>
+                        <p>Click to call from a supported device</p>
+                    </div>
+                </a>
+
+                <a class="contact-card"
+                   href="https://github.com/kailasdreams"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="contact-icon">💻</div>
+                    <div>
+                        <h3>GitHub Profile</h3>
+                        <p class="contact-value">kailasdreams</p>
+                        <p>Explore repositories and code</p>
+                    </div>
+                </a>
+
+                <a class="contact-card"
+                   href="https://www.linkedin.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="contact-icon">🔗</div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p class="contact-value">Professional Network</p>
+                        <p>Connect with me on LinkedIn</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="cta">
+                <p class="eyebrow">Available for Opportunities</p>
+                <h2>Need an experienced networking professional?</h2>
+                <p>
+                    Let's discuss your infrastructure requirements,
+                    application delivery challenges, automation initiatives,
+                    migration projects, or F5 LTM training needs.
+                </p>
+
+                <div class="buttons center">
+                    <a class="btn btn-primary"
+                       href="mailto:kailasdreams@gmail.com?subject=Networking%20Consulting%20Enquiry">
+                        ✉ Email for Support
+                    </a>
+
+                    <a class="btn"
+                       href="tel:+917777050805">
+                        ☎ Call +91 7777050805
+                    </a>
+
+                    <a class="btn"
+                       href="https://github.com/kailasdreams"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub Profile ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <p>
+            © <span id="year"></span> Kailas H. Pathade.
+            All rights reserved.
+        </p>
+
+        <a href="https://github.com/kailasdreams"
+           target="_blank"
+           rel="noopener noreferrer">
+            Built with GitHub Pages ↗
+        </a>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
 </body>
 </html>
